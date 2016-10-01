@@ -40,7 +40,9 @@ public class ParamIniciales extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
+             
             out.println("<head>");
+             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");
             out.println("<title>Servlet ParamIniciales</title>");            
             out.println("</head>");
             out.println("<body>");
@@ -49,6 +51,7 @@ public class ParamIniciales extends HttpServlet {
                 String nextElement = parametros.nextElement();
                 out.println(nextElement+" = "+request.getParameter(nextElement));
             }
+              out.write("<em><a href='/index.html'>volver</a></em>");
             out.println("</body>");
             out.println("</html>");
         }

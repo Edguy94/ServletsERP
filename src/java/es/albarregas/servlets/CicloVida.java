@@ -24,10 +24,12 @@ public class CicloVida extends HttpServlet {
         out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");
             out.println("<title>Servlet HolaMundo</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1> El ciclo de vida se muestra por consola </h1>");
+              out.write("<em><a href='/index.html'>volver</a></em>");
             out.println("</body>");
             out.println("</html>");
         System.out.println("Estoy en el service");

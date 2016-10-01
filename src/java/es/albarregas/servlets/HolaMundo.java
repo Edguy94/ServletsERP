@@ -35,10 +35,12 @@ public class HolaMundo extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+                     out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");
             out.println("<title>Servlet HolaMundo</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Hola Mundo! </h1>");
+              out.write("<em><a href='/index.html'>volver</a></em>");
             out.println("</body>");
             out.println("</html>");
         }

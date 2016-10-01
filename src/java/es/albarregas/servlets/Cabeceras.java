@@ -45,6 +45,7 @@ public class Cabeceras extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");
             out.println("<title>Servlet Cabeceras</title>");            
             out.println("</head>");
             out.println("<body>");
@@ -56,6 +57,7 @@ public class Cabeceras extends HttpServlet {
                 
             }
               out.println("</ul>");
+               out.write("<em><a href='/index.html'>volver</a></em>");
             out.println("</body>");
             out.println("</html>");
         }
