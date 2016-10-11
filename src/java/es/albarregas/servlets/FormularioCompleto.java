@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author rpk19
  */
-public class Login extends HttpServlet {
+public class FormularioCompleto extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,28 +35,30 @@ public class Login extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");
-            out.println("<title>Servlet Login</title>");            
+            out.println("<title>Servlet FormularioCompleto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Ejercicio LogIn</h1>");
-             out.println("<form method ='POST'/>");
-            out.println("Nombre de usuario: <input type='text' name = 'user'/><br>");
-            out.println("Contraseña: <input type='text' name = 'pass'/>");
-            out.println("<br><input type ='checkbox' value = 'Lectura' name='lectura'/>Lectura<br>"
-                    + "<input type ='checkbox' value = 'Deporte' name='deporte'/>Deporte<br>"
-                    +"<input type ='checkbox' value = 'Videojuegos' name='videojuegos'/>Videojuegos<br>"
-                    + "<input type ='checkbox' value = 'Programar' name='programar'/>Programar<br>"
-            );
-            out.println("<input type='submit' value = 'LogIn'/>"
-                    + "<input type='submit' value ='Limpiar'/>");
-             out.println("</form>");
+            out.println("<h1> Formulario Completo </h1>");
+            //datos personales
+            out.println("Nombre: <input type='text' value ='nombre' name = 'nombre'/><br>"
+                    + "Apellidos: <input type='text' value = 'apellidos' name ='apellidos'/><br>"
+                    + "Hombre <input type='radio' name = 'sex'/> Mujer <input type='radio' name = 'sex'/><br>"
+                    + "fecha nacimiento: <input type='date' name = 'fechaNac'/><br>");
+            //datos acceso
+            
+            out.println("Usuario: <input type =' text' name ='usuario'/><br>"
+                    + "Pass: <input type='text' name ='pass'/><br>"
+                    + "Repita el pass <input type='text name ='pass2'/><br>");
+            //Info general
+            out.println("Aficiones:<br>"
+                    + "<input type='checkbox' value = 'Lectura' name = 'lectura'/>Lectura<br>"
+                    + "<input type='checkbox' value = 'Depote' name = 'deporte'/> Deporte<br>"
+                    + "<input type='checkbox' value = 'Videojuegos' name = 'videojuegos'/>Videojuegos<br>"
+                    + "<input type='checkbox' value = 'Programacion' name = 'programacion'/>Programacion<br>");
+      
+            
             out.println("</body>");
             out.println("</html>");
-            
-          
-         
-            
         }
     }
 

@@ -20,6 +20,10 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>es.albarregas.servlets.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FormularioCompleto</servlet-name>
+        <servlet-class>es.albarregas.servlets.FormularioCompleto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CicloVida</servlet-name>
         <url-pattern>/CicloVida</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FormularioCompleto</servlet-name>
+        <url-pattern>/FormularioCompleto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
