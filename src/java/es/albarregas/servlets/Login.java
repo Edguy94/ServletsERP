@@ -41,21 +41,22 @@ public class Login extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
              out.println("<form method ='POST'/>");
-            out.println("Nombre de usuario: <input type='text' name = 'user'/>");
+            out.println("Nombre de usuario: <input type='text' name = 'user'/><br>");
             out.println("Contraseña: <input type='text' name = 'pass'/>");
-            out.println("<input type='submit' value = 'LogIn'/>");
+            out.println("<br><input type ='checkbox' value = 'Lectura' name='lectura'/>Lectura<br>"
+                    + "<input type ='checkbox' value = 'Deporte' name='deporte'/>Deporte<br>"
+                    +"<input type ='checkbox' value = 'Videojuegos' name='videojuegos'/>Videojuegos<br>"
+                    + "<input type ='checkbox' value = 'Programar' name='programar'/>Programar<br>"
+            );
+            out.println("<input type='submit' value = 'LogIn'/>"
+                    + "<input type='submit' value ='Limpiar'/>");
              out.println("</form>");
-               if(request.getParameter("name")!=null && request.getParameter("pass")!=null){
-              
-          
-            out.println("user "+request.getParameter("user"));
-            out.println("pass "+request.getParameter("pass"));
             out.println("</body>");
             out.println("</html>");
             
           
          
-            }
+            
         }
     }
 
