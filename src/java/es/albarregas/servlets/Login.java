@@ -49,7 +49,8 @@ public class Login extends HttpServlet {
                     + "<input type ='checkbox' value = 'Programar' name='programar'/>Programar<br>"
             );
             out.println("<input type='submit' value = 'LogIn'/>"
-                    + "<input type='submit' value ='Limpiar'/>");
+                    + "<input type='submit' value ='Limpiar'/><br>");
+                 out.write("<em><a href='/index.html'>volver</a></em>");
              out.println("</form>");
             out.println("</body>");
             out.println("</html>");

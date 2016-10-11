@@ -56,7 +56,10 @@ public class FormularioCompleto extends HttpServlet {
                     + "<input type='checkbox' value = 'Videojuegos' name = 'videojuegos'/>Videojuegos<br>"
                     + "<input type='checkbox' value = 'Programacion' name = 'programacion'/>Programacion<br>");
       
-            
+         
+                out.write("<input type='submit' value='Enviar' name='enviar'/>"
+                        + "<input type='submit' value = 'Limpiar' name='limpiar'/><br>");
+                     out.write("<em><a href='/index.html'>volver</a></em>");
             out.println("</body>");
             out.println("</html>");
         }
