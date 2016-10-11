@@ -24,6 +24,10 @@
         <servlet-name>FormularioCompleto</servlet-name>
         <servlet-class>es.albarregas.servlets.FormularioCompleto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ContadorVisitarsCookie</servlet-name>
+        <servlet-class>es.albarregas.servlets.ContadorVisitarsCookie</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CicloVida</servlet-name>
         <url-pattern>/CicloVida</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>FormularioCompleto</servlet-name>
         <url-pattern>/FormularioCompleto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContadorVisitarsCookie</servlet-name>
+        <url-pattern>/ContadorVisitarsCookie</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
