@@ -8,16 +8,15 @@ package es.albarregas.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author rpk19
  */
-public class ContadorVisitarsCookie extends HttpServlet {
+public class ContadroVisitasSession extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,40 +29,40 @@ public class ContadorVisitarsCookie extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Cookie wookie = null;
-        Cookie[] cookies = request.getCookies();
-        if(cookies != null){
-            for (int i = 0; i < cookies.length; i++) {
-                if(cookies[i].getName().equals("CONTADOR")){
-                    wookie = cookies[i];
-                     cookies[i].setValue(Integer.toString(Integer.parseInt(wookie.getValue())+1));
-                }
-                
-            }
-        }
-        if(wookie == null){
-            wookie = new Cookie("CONTADOR", "0");
-        }
-       if(request.getParameter("borrar")!=null){
-       wookie.setValue("0");
-       }
-        
-        response.addCookie(wookie);
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            //Inicio la sesion
+            HttpSession sesion = request.getSession(true);
+            //si el atributo sesion no existe, lo creo y lo inicializo en 0
+            if(sesion.getAttribute("CONTADOR")==null)
+            sesion.setAttribute("CONTADOR", "1");
+            else
+                //si existe, sumare en 1 el contador de visitas
+                sesion.setAttribute("CONTADOR", Integer.parseInt(sesion.getAttribute("CONTADOR").toString())+1);
+            
+            //si dejo checkada la opcion de invalidar, me cargo la sesion
+            if(request.getParameter("invalidar")!=null){
+                sesion.invalidate();
+            }
+            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ContadorVisitarsCookie</title>");            
+            out.println("<title>Servlet ContadroVisitasSession</title>");            
             out.println("</head>");
             out.println("<body>");
-                 out.write("<form action = '/ContadorVisitarsCookie'>");
-            out.println("<h1>Has visitado esta página "+wookie.getValue()+" veces</h1>");
-            out.println("<input type='submit' value='BorrarCookie' name='borrar'/>"
-                    + "<input type='submit' value = 'Refrescar' name ='refrescar'/>"
-                    + "<em><a href='/index.html'>volver</a></em>");
-                 out.write("</form>");
+            out.println("<h1>Contador visitas con sesiones</h1>");
+            out.println("<form action ='/ContadroVisitasSession'>");
+          try{
+            out.println("<h2>Has visitado esta página "+sesion.getAttribute("CONTADOR")+" veces</h2>");
+          }catch(Exception e){
+              out.println("<h2> La sesion se invalidó</h2>");
+          }
+             out.println("<input type='checkbox' value = 'invalidar' name = 'invalidar'/> Invalidar visita <br>"
+                     + "<input type='submit' value ='Refrescar' name = 'refrescar'/><br>"
+                     + "<em><a href='/index.html'>volver</a></em>");
+              out.println("</form >");
             out.println("</body>");
             out.println("</html>");
         }

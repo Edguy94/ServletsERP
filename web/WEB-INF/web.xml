@@ -28,6 +28,10 @@
         <servlet-name>ContadorVisitarsCookie</servlet-name>
         <servlet-class>es.albarregas.servlets.ContadorVisitarsCookie</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ContadroVisitasSession</servlet-name>
+        <servlet-class>es.albarregas.servlets.ContadroVisitasSession</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CicloVida</servlet-name>
         <url-pattern>/CicloVida</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>ContadorVisitarsCookie</servlet-name>
         <url-pattern>/ContadorVisitarsCookie</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContadroVisitasSession</servlet-name>
+        <url-pattern>/ContadroVisitasSession</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
