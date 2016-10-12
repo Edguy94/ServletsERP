@@ -35,23 +35,43 @@ public class Login extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+             out.write("<link href='css/bootstrap.css' rel='stylesheet' type='text/css'/>");
             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");
             out.println("<title>Servlet Login</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Ejercicio LogIn</h1>");
+            out.println("<article>");
+            out.println("<header>");
+            out.println("<h1 class ='jumbotron'>Ejercicio LogIn</h1>");
+            //div para el loginaso
              out.println("<form method ='POST'/>");
+                    out.println("<div class ='row' id = 'login'>");
+                    out.println("  <div class='col-sm-4'>");
+                           out.println("<section class='panel-info'>");
+                    out.println("<div class = 'panel-heading'>");
+                    out.println("<h2> Ingrese sus datos</h2>");
+                    out.println("</div>");
+                           out.println("<p class = 'panel-body'>");
             out.println("Nombre de usuario: <input type='text' name = 'user'/><br>");
-            out.println("Contraseña: <input type='text' name = 'pass'/>");
+            out.println("Contraseña: <input type='password' name = 'pass'/>");
             out.println("<br><input type ='checkbox' value = 'Lectura' name='lectura'/>Lectura<br>"
                     + "<input type ='checkbox' value = 'Deporte' name='deporte'/>Deporte<br>"
                     +"<input type ='checkbox' value = 'Videojuegos' name='videojuegos'/>Videojuegos<br>"
                     + "<input type ='checkbox' value = 'Programar' name='programar'/>Programar<br>"
             );
-            out.println("<input type='submit' value = 'LogIn'/>"
-                    + "<input type='submit' value ='Limpiar'/><br>");
+            out.println("<input type='submit' value = 'LogIn' class='btn btn-info'/>"
+                    + "<input type='submit' value ='Limpiar'class='btn btn-warning'/><br>");
+                   out.println("</div>");
+                          out.println("</section>");
+                          out.println("</div>");
+                   out.println("</div>");
+            //fin del loginaso
                  out.write("<em><a href='/index.html'>volver</a></em>");
              out.println("</form>");
+              out.println(" <footer class=\"footer\" id =\"pie\">\n" +
+"                <p id=\"textFoot\">@Enrique Ramírez Parra<br>\n" +
+"                    Correo: rpk1994@gmail.com</p>\n" +
+"            </footer>");
             out.println("</body>");
             out.println("</html>");
             

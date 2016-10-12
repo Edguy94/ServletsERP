@@ -9,11 +9,39 @@ and open the template in the editor.
 */
 
 body{
-    background-color: #BBECFC;
+   
 }
 
 ul li {
     text-decoration: underline;
     color: red;
     
+}
+.page-header{
+    text-decoration: underline;
+}
+.footer{
+ position: absolute;
+ bottom:0;
+ background-color: blueviolet;
+ width:100%;
+}
+.footer #textFoot{
+    float:right;
+    text-align:left;
+    font-weight:bold;
+    padding:1%;
+}
+.jumbotron{
+ margin:0;
+ 
+    text-align: center;
+     background-color: #BBECFC;
+  
+}
+.row{
+    padding: 2%;
+}
+#login{
+    float:center;
 }
