@@ -55,15 +55,28 @@ public class ContadorVisitarsCookie extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+             out.write("<link href='css/bootstrap.css' rel='stylesheet' type='text/css'/>");
+             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");                    
             out.println("<title>Servlet ContadorVisitarsCookie</title>");            
             out.println("</head>");
             out.println("<body>");
+              out.println("<article>");
+              out.println("<header>");
+            out.println("<h1 class='jumbotron'> Contador de visitas con cookies </h1>");
+              out.println("</header>");
+               out.println("<div id='centrar'>");
                  out.write("<form action = '/ContadorVisitarsCookie'>");
-            out.println("<h1>Has visitado esta página "+wookie.getValue()+" veces</h1>");
-            out.println("<input type='submit' value='BorrarCookie' name='borrar'/>"
-                    + "<input type='submit' value = 'Refrescar' name ='refrescar'/>"
+            out.println("<h2>Has visitado esta página "+wookie.getValue()+" veces</h2>");
+            out.println("<input type='submit' value='BorrarCookie' name='borrar' class='btn btn-info'/><br>"
+                    + "<input type='submit' value = 'Refrescar' name ='refrescar' class ='btn btn-warning'/><br>"
                     + "<em><a href='/index.html'>volver</a></em>");
                  out.write("</form>");
+                  out.println("</div>");
+                   out.println(" <footer class=\"footer\" id =\"pie\">\n" +
+"                <p id=\"textFoot\">@Enrique Ramírez Parra<br>\n" +
+"                    Correo: rpk1994@gmail.com</p>\n" +
+"            </footer>");
+                 out.println("</article>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -49,20 +49,31 @@ public class ContadroVisitasSession extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ContadroVisitasSession</title>");            
+            out.println("<title>Servlet ContadroVisitasSession</title>");  
+             out.write("<link href='css/bootstrap.css' rel='stylesheet' type='text/css'/>");
+             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");                    
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Contador visitas con sesiones</h1>");
+            out.println("<article>");
+            out.println("<header>");
+            out.println("<h1 class = 'jumbotron'>Contador visitas con sesiones</h1>");
+            out.println("</header>");
+            out.println("<div id=centrar>");
             out.println("<form action ='/ContadroVisitasSession'>");
           try{
             out.println("<h2>Has visitado esta página "+sesion.getAttribute("CONTADOR")+" veces</h2>");
           }catch(Exception e){
               out.println("<h2> La sesion se invalidó</h2>");
           }
-             out.println("<input type='checkbox' value = 'invalidar' name = 'invalidar'/> Invalidar visita <br>"
-                     + "<input type='submit' value ='Refrescar' name = 'refrescar'/><br>"
+             out.println("<input type='checkbox'  value = 'invalidar' name = 'invalidar'/> Invalidar visita <br>"
+                     + "<input type='submit' value ='Refrescar' name = 'refrescar' class='btn btn-info'/><br>"
                      + "<em><a href='/index.html'>volver</a></em>");
               out.println("</form >");
+              out.println("</div>");
+                out.println(" <footer class=\"footer\" id =\"pie\">\n" +
+"                <p id=\"textFoot\">@Enrique Ramírez Parra<br>\n" +
+"                    Correo: rpk1994@gmail.com</p>\n" +
+"            </footer>");
             out.println("</body>");
             out.println("</html>");
         }

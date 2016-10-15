@@ -30,7 +30,7 @@ ul li {
     float:right;
     text-align:left;
     font-weight:bold;
-    padding:1%;
+    padding:0.5%;
 }
 .jumbotron{
  margin:0;
@@ -42,6 +42,13 @@ ul li {
 .row{
     padding: 2%;
 }
-#login{
-    float:center;
+
+#centrar  {
+ margin-top: 10%;
+ margin-left:  35%;
+}
+
+#error{
+    color:red;
+    font-weight: bold;
 }
