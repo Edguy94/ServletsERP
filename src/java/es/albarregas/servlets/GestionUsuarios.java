@@ -36,7 +36,7 @@ public class GestionUsuarios extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
               HttpSession sesion = request.getSession();
             /* TODO output your page here. You may use following sample code. */
-            if(request.getParameter("enviar")==null){
+            if(request.getParameter("enviar")==null && request.getParameter("continuar")==null){
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -44,18 +44,18 @@ public class GestionUsuarios extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1> Gestion Usuarios </h1>");
-             out.println("<form action='/GestionUsuarios>");
-           out.println("<p>Id uno</p><input type='text' name ='idUno'/>"+
-           "<p>Id dos</p><input type='text' name ='idDos'/>"+
-          "<p>Id tres</p><input type='text' name ='idTres'/>");
+             out.println("<form action='/GestionUsuarios'>");
+           out.println("<p>Id uno<input type='text' name ='idUno'/>"+
+           "Id dos<input type='text' name ='idDos'/>"+
+          "Id tres<input type='text' name ='idTres'/></p>");
            out.println("<br>");
-            out.println("<p>Nombre uno</p><input type='text' name ='nombreUno'/>"+
-            "<p>Nombre dos</p><input type='text' name ='nombreDos'/>"+
-           "<p>Nombre tres</p><input type='text' name ='nombreTres'/>");
+            out.println("<p>Nombre uno<input type='text' name ='nombreUno'/>"+
+            "Nombre dos<input type='text' name ='nombreDos'/>"+
+           "Nombre tres<input type='text' name ='nombreTres'/></p>");
             out.println("<br>");
-            out.println("<p>Sueldo uno</p><input type='text' name ='sueldoUno'/>"+
-            "<p>Sueldo dos</p><input type='text' name ='sueldoDos'/>"+
-           "<p>Sueldo tres</p><input type='text' name ='sueldoTres'/>");
+            out.println("<p>Sueldo uno<input type='text' name ='sueldoUno'/>"+
+            "Sueldo dos<input type='text' name ='sueldoDos'/>"+
+           "Sueldo tres<input type='text' name ='sueldoTres'/></p>");
           
             
             out.println("<input type='submit' value ='Enviar' name ='enviar'/>");
@@ -78,7 +78,9 @@ public class GestionUsuarios extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
            out.println("<h1>Datos almacenados</h1>");
+            out.println("<form action='/GestionUsuarios'>");
            out.println("<input type='submit'value='Continuar' name = 'continuar'/>");
+            out.println("</form>");
             out.println("</body>");
             out.println("</html>");
             }
@@ -93,9 +95,10 @@ public class GestionUsuarios extends HttpServlet {
             out.println("<body>");
             out.println("<h1> Datos almacenados </h1>");
                 for (int i = 0; i < listaUsuarios.size(); i++) {
-                    out.print("<p>Id"+(i+1)+":"+listaUsuarios.get(i).getId()+" nombre"+(i+1)+":"+listaUsuarios.get(i).getNombre()+" sueldo"+(i+1)+":"+listaUsuarios.get(i).getSueldo()+"</p>");
+                    out.print("<p>Usuario "+(i+1)+" Id: "+listaUsuarios.get(i).getId()+" nombre: "+listaUsuarios.get(i).getNombre()+" sueldo: "+listaUsuarios.get(i).getSueldo()+"</p>");
                     
                 }
+                out.println("<em><a href='/index.html'>volver</a></em>");
             out.println("</body>");
             out.println("</html>");
             }
