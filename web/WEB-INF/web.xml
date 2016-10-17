@@ -32,6 +32,10 @@
         <servlet-name>ContadroVisitasSession</servlet-name>
         <servlet-class>es.albarregas.servlets.ContadroVisitasSession</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionUsuarios</servlet-name>
+        <servlet-class>es.albarregas.servlets.GestionUsuarios</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CicloVida</servlet-name>
         <url-pattern>/CicloVida</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>ContadroVisitasSession</servlet-name>
         <url-pattern>/ContadroVisitasSession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionUsuarios</servlet-name>
+        <url-pattern>/GestionUsuarios</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
