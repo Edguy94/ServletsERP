@@ -61,6 +61,7 @@ public class Cabeceras extends HttpServlet {
                 out.println("<li>"+nextElement+" = "+request.getHeader(nextElement)+"</li>");
                 
             }
+          
               out.println("</ul>");
               out.println("</div>");
                out.write("<em><a href='/index.html'>volver</a></em>");

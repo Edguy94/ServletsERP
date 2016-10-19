@@ -15,11 +15,38 @@
         <title>Carrito</title>
     </head>
     <body>
+        <%!
+            ArrayList<Libro> libros = new ArrayList<Libro>();
+      
+        %>
         <form action="TiendaLibros.jsp">
         <h1>Tienda online libreria Kikeli </h1>
         <h2>Seleccione Libro</h2>
-        <%String mensaje ="";%><br>
-        <label name ='mensaje'><%=mensaje%></label>
+    
+             <%
+                
+             HttpSession sesion = request.getSession();
+            if(request.getParameter("addCesta")!=null){
+                try{
+                      Libro libro = new Libro(request.getParameter("lista"), Integer.parseInt(request.getParameter("cantidad")));
+                   if(!comprobarRepe(libros, libro)) {
+              
+                libros.add(libro);}
+                   else
+                       
+                sesion.setAttribute("lista", libros);
+                 %>
+                 <p> Se ha metido <strong><%=request.getParameter("cantidad")%></strong> libros titulados "<strong><em><%=request.getParameter("lista")%></em></strong>"</p>
+                 <p><%=libros.size()%>
+        <%
+                }catch(NumberFormatException e){
+                  %><p>Se ha insertado un caracter no válido</p><%
+                }
+            }%>
+            <%
+           if(request.getParameter("showCarrit")==null){
+          
+            %>
         <select size ='10' name ='lista'>
             <option> Juego de tronos </option>
             <option> Harry Potter </option>
@@ -37,17 +64,51 @@
         <input type='submit' value='Añadir a la cesta' name='addCesta'/>
         <input type='submit' value ='Limpiar' name='limpiar'/>
         <input type='submit' value='Finalizar Compra' name='showCarrit'/>
+  <%}
+           if(request.getParameter("showCarrit")!=null){
+        
+            %>
+            
+                <body>
+                     <table border ='1'>
+                            <tr>
+                                <th>Titulo</th><th>Cantidad</th>
+                            </tr>
+                            
+                    <%ArrayList<Libro> libretes =(ArrayList<Libro>) sesion.getAttribute("lista");
+                        for(int i=0; i<libretes.size();i++){%>
+                       
+                            
+                            <tr>
+                                <td><%=libretes.get(i).getTitulo()%><td><%=libretes.get(i).getCantidad()%></td>
+                            </tr>
+                     
+                    <%}%>
+                       </table>
+                       <em><a href='TiendaLibros.jsp'> volver</a></em>
+                </body>
+           
         <%
-            ArrayList<Libro> libros = new ArrayList<Libro>();
-            if(request.getParameter("addCesta")!=null){
-                try{
-                libros.add(new Libro(request.getParameter("lista"), Integer.parseInt(request.getParameter("cantidad"))));
-                  mensaje="Se ha añadido a la cesta "+request.getParameter("cantidad")+" del libro "+request.getParameter("lista");
-                }catch(NumberFormatException e){
-                    mensaje = "Cantidad incorrecta";
-                }
-            }
+           }
+            
         %>
         </form>
+        <%!
+            /**
+             * Este metodo comproara si hay repetidos en la lista que le pase.
+             */
+        public boolean comprobarRepe(ArrayList<Libro> libros, Libro libro){
+        for(Libro librete : libros){
+//si el libro esta repe, incrementara la cantidad del libro en el arraylist sumandole la
+//cantidad del nuevo libro que se pasa por parametro y se esta comprobando.
+        if(librete.getTitulo().equals(libro.getTitulo())){
+            librete.setCantidad(librete.getCantidad()+libro.getCantidad());
+            return true;
+    }
+        }
+return false;
+}
+        %>
+        
     </body>
 </html>

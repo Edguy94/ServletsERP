@@ -52,3 +52,10 @@ ul li {
     color:red;
     font-weight: bold;
 }
+#muestraDatos{
+    padding:5%;
+    display: inline-block;
+    background-color:#25FF29;
+    color:white;
+    font-weight: bold;
+}

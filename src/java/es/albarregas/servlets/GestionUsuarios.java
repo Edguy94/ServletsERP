@@ -40,26 +40,44 @@ public class GestionUsuarios extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet GestionUsuarios</title>");            
+            out.println("<title>Servlet GestionUsuarios</title>");
+  out.write("<link href='css/bootstrap.css' rel='stylesheet' type='text/css'/>");
+             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");                                
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1> Gestion Usuarios </h1>");
+             out.println("<article>");
+              out.println("<header>");
+               
+            out.println("<h1 class ='jumbotron'> Gestion Usuarios </h1>");
+             out.println("</header>");
+             
              out.println("<form action='/GestionUsuarios'>");
-           out.println("<p>Id uno<input type='text' name ='idUno'/>"+
-           "Id dos<input type='text' name ='idDos'/>"+
-          "Id tres<input type='text' name ='idTres'/></p>");
-           out.println("<br>");
-            out.println("<p>Nombre uno<input type='text' name ='nombreUno'/>"+
-            "Nombre dos<input type='text' name ='nombreDos'/>"+
-           "Nombre tres<input type='text' name ='nombreTres'/></p>");
-            out.println("<br>");
-            out.println("<p>Sueldo uno<input type='text' name ='sueldoUno'/>"+
-            "Sueldo dos<input type='text' name ='sueldoDos'/>"+
-           "Sueldo tres<input type='text' name ='sueldoTres'/></p>");
-          
-            
-            out.println("<input type='submit' value ='Enviar' name ='enviar'/>");
+              out.println("<section class='row'>");
+               out.println("<div class='col-sm-3'>");
+           out.println("<p>Id uno<input type='text' name ='idUno'/><br>"+
+                  " Nombre uno<input type='text' name ='nombreUno'/><br>"+
+                   "Sueldo uno<input type='text' name ='sueldoUno'/></p>");
+           out.println("</div>");
+            out.println("<div class='col-sm-3'>");
+            out.println("<p>Id dos<input type='text' name ='idDos'/><br>"+
+            "Nombre dos<input type='text' name ='nombreDos'/><br>"+
+            "Sueldo dos<input type='text' name ='sueldoDos'/></div>"+
+           "</p>");
+            out.println("</div>");
+             out.println("<div class='col-sm-3'>");
+            out.println("<p>"+
+                    "Id tres<input type='text' name ='idTres'/><br>"+
+           "Nombre tres<input type='text' name ='nombreTres'/><br>"+
+           "Sueldo tres<input type='text' name ='sueldoTres'/></p></div><br>");
+            out.println("</section>");
+              
+            out.println("<input type='submit' value ='Enviar' name ='enviar' class='btn btn-info'/>");
              out.println("</form>");
+              out.println(" <footer class=\"footer\" id =\"pie\">\n" +
+"                <p id=\"textFoot\">@Enrique Ramírez Parra<br>\n" +
+"                    Correo: rpk1994@gmail.com</p>\n" +
+"            </footer>");
+             out.println("</article>");
             out.println("</body>");
             out.println("</html>");
         }else if(request.getParameter("enviar")!=null){
@@ -74,13 +92,24 @@ public class GestionUsuarios extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet GestionUsuarios</title>");            
+            out.println("<title>Servlet GestionUsuarios</title>");     
+            out.write("<link href='css/bootstrap.css' rel='stylesheet' type='text/css'/>");
+             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");                                
             out.println("</head>");
             out.println("<body>");
-           out.println("<h1>Datos almacenados</h1>");
+            out.println("<article>");
+            out.println("<header>");
+           out.println("<h1 class='jumbotron'>Gestion de usuarios</h1>");
+           out.println("</header>");
+           out.println("<h3>Datos almacenados</h3>");
             out.println("<form action='/GestionUsuarios'>");
-           out.println("<input type='submit'value='Continuar' name = 'continuar'/>");
+           out.println("<input type='submit'value='Continuar' name = 'continuar' class='btn btn-success'/>");
             out.println("</form>");
+             out.println(" <footer class=\"footer\" id =\"pie\">\n" +
+"                <p id=\"textFoot\">@Enrique Ramírez Parra<br>\n" +
+"                    Correo: rpk1994@gmail.com</p>\n" +
+"            </footer>");
+             out.println("</article>");
             out.println("</body>");
             out.println("</html>");
             }
@@ -90,15 +119,26 @@ public class GestionUsuarios extends HttpServlet {
                   out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet GestionUsuarios</title>");            
+            out.println("<title>Servlet GestionUsuarios</title>"); 
+              out.write("<link href='css/bootstrap.css' rel='stylesheet' type='text/css'/>");
+             out.write("<link href='css/estilos.css' rel='stylesheet' type='text/css'/>");                                
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1> Datos almacenados </h1>");
+            out.println("<header>");
+            out.println("<h1 class='jumbotron'> Datos almacenados </h1>");
+            out.println("</header");
+            out.println("<div id='muestraDatos'>");
                 for (int i = 0; i < listaUsuarios.size(); i++) {
                     out.print("<p>Usuario "+(i+1)+" Id: "+listaUsuarios.get(i).getId()+" nombre: "+listaUsuarios.get(i).getNombre()+" sueldo: "+listaUsuarios.get(i).getSueldo()+"</p>");
                     
                 }
+                out.println("</div>");
                 out.println("<em><a href='/index.html'>volver</a></em>");
+                out.println(" <footer class=\"footer\" id =\"pie\">\n" +
+"                <p id=\"textFoot\">@Enrique Ramírez Parra<br>\n" +
+"                    Correo: rpk1994@gmail.com</p>\n" +
+"            </footer>");
+                out.println("</article>");
             out.println("</body>");
             out.println("</html>");
             }

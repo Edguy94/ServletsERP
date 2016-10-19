@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/web/BienvenidaTienda.html</file>
             <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/web/css/estilos.css</file>
-            <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/web/jsp/Calculadora.jsp</file>
+            <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/src/java/es/albarregas/beans/Libro.java</file>
+            <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/src/java/es/albarregas/servlets/ContadorVisitarsCookie.java</file>
             <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/web/index.html</file>
+            <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/web/jsp/TiendaLibros.jsp</file>
             <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/src/java/es/albarregas/servlets/Login.java</file>
+            <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/src/java/es/albarregas/beans/Usuario.java</file>
             <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/src/java/es/albarregas/servlets/ContadroVisitasSession.java</file>
+            <file>file:/C:/Users/rpk19/OneDrive/Documentos/NetBeansProjects/PrimerosProyectos/01102016_ServletsERP/src/java/es/albarregas/servlets/GestionUsuarios.java</file>
         </group>
     </open-files>
 </project-private>
