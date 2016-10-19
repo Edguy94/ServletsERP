@@ -12,6 +12,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+          <link href="css/estilos" rel="stylesheet" type="text/css"/>
         <title>Carrito</title>
     </head>
     <body>
@@ -19,8 +21,12 @@
             ArrayList<Libro> libros = new ArrayList<Libro>();
       
         %>
+        <article>
+            <header>
+         <h1 class = 'jumbotron'>Tienda online libreria Kikeli </h1>
+            </header>
         <form action="TiendaLibros.jsp">
-        <h1>Tienda online libreria Kikeli </h1>
+       
         <h2>Seleccione Libro</h2>
     
              <%
@@ -62,15 +68,15 @@
         <h2> Cantidad</h2><br>
         <input type='text' name ='cantidad'/><br>
         <input type='submit' value='Añadir a la cesta' name='addCesta'/>
-        <input type='submit' value ='Limpiar' name='limpiar'/>
-        <input type='submit' value='Finalizar Compra' name='showCarrit'/>
+        <input type='submit' value ='Limpiar' name='limpiar' class='btn btn-warning'/>
+        <input type='submit' value='Finalizar Compra' name='showCarrit' class='btn btn-success'/>
   <%}
            if(request.getParameter("showCarrit")!=null){
         
             %>
             
                 <body>
-                     <table border ='1'>
+                     <table border ='1' class='table table-striped'>
                             <tr>
                                 <th>Titulo</th><th>Cantidad</th>
                             </tr>
@@ -109,6 +115,9 @@
 return false;
 }
         %>
-        
+       <footer class="footer" id ="pie">
+                <p id="textFoot">@Enrique Ramírez Parra<br> 
+                   Correo: rpk1994@gmail.com</p>
+        </footer>
     </body>
 </html>
