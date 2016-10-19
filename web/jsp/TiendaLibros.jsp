@@ -12,8 +12,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-          <link href="css/estilos" rel="stylesheet" type="text/css"/>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+          <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
         <title>Carrito</title>
     </head>
     <body>
@@ -31,25 +31,29 @@
     
              <%
                 
-             HttpSession sesion = request.getSession();
+              HttpSession sesion = request.getSession();
             if(request.getParameter("addCesta")!=null){
+                if(request.getParameter("lista")==null){
+                    %><p id="error">No ha seleccionado libro</p><%
+                }
+               
                 try{
                       Libro libro = new Libro(request.getParameter("lista"), Integer.parseInt(request.getParameter("cantidad")));
                    if(!comprobarRepe(libros, libro)) {
               
                 libros.add(libro);}
-                   else
+                 
                        
                 sesion.setAttribute("lista", libros);
                  %>
                  <p> Se ha metido <strong><%=request.getParameter("cantidad")%></strong> libros titulados "<strong><em><%=request.getParameter("lista")%></em></strong>"</p>
-                 <p><%=libros.size()%>
+               
         <%
                 }catch(NumberFormatException e){
-                  %><p>Se ha insertado un caracter no válido</p><%
+                  %><p id ='error'>Se ha insertado un caracter no válido</p><%
                 }
-            }%>
-            <%
+            }
+            
            if(request.getParameter("showCarrit")==null){
           
             %>
@@ -67,12 +71,12 @@
         </select><br>
         <h2> Cantidad</h2><br>
         <input type='text' name ='cantidad'/><br>
-        <input type='submit' value='Añadir a la cesta' name='addCesta'/>
+        <input type='submit' value='Añadir a la cesta' name='addCesta' class="btn btn-info"/>
         <input type='submit' value ='Limpiar' name='limpiar' class='btn btn-warning'/>
         <input type='submit' value='Finalizar Compra' name='showCarrit' class='btn btn-success'/>
   <%}
            if(request.getParameter("showCarrit")!=null){
-        
+        try{
             %>
             
                 <body>
@@ -89,9 +93,15 @@
                                 <td><%=libretes.get(i).getTitulo()%><td><%=libretes.get(i).getCantidad()%></td>
                             </tr>
                      
-                    <%}%>
+                    <%}
+//invalido la sesion tras imprimir los datos
+                    sesion.invalidate();
+}catch(NullPointerException e){
+%><p id='error'>Carrito vacío</p><%
+}
+                    %>
                        </table>
-                       <em><a href='TiendaLibros.jsp'> volver</a></em>
+                       <em><a href='TiendaLibros.jsp' name ='volver'> volver</a></em>
                 </body>
            
         <%
@@ -114,6 +124,12 @@
         }
 return false;
 }
+        %>
+        <%
+            if(request.getParameter("limpiar")!=null){
+           request.setAttribute("cantidad", "");
+        }
+          
         %>
        <footer class="footer" id ="pie">
                 <p id="textFoot">@Enrique Ramírez Parra<br> 
